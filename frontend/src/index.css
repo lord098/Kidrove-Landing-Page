@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   Global Styles
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #0F172A;
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #ffffff 40%,
+    #f8fafc 100%
+  );
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* =========================
+   Section Styling
+========================= */
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #0f172a;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: #64748b;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Hero Decorations
+========================= */
+
+.hero-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.hero-glow-blue {
+  width: 300px;
+  height: 300px;
+  background: #60a5fa;
+  top: -100px;
+  left: -80px;
+}
+
+.hero-glow-purple {
+  width: 350px;
+  height: 350px;
+  background: #a78bfa;
+  right: -100px;
+  top: 100px;
+}
+
+.hero-glow-yellow {
+  width: 250px;
+  height: 250px;
+  background: #fbbf24;
+  bottom: -80px;
+  left: 30%;
+}
+
+/* =========================
+   Floating Animation
+========================= */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* =========================
+   Circuit Animation
+========================= */
+
+@keyframes node-ping {
+  0%,100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.5);
+  }
+}
+
+.circuit-node {
+  animation: node-ping 2.5s ease-in-out infinite;
+}
+
+.circuit-node:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.circuit-node:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.circuit-node:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.circuit-node:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+.circuit-node:nth-child(6) {
+  animation-delay: 2s;
+}
+
+/* =========================
+   Card Styling
+========================= */
+
+.workshop-card {
+  background: white;
+  border-radius: 28px;
+  border: 1px solid #e2e8f0;
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.08);
+  transition: all 0.3s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 25px 50px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   FAQ Accordion
+========================= */
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.35s ease;
+  opacity: 0;
+}
+
+.faq-content.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* =========================
+   Form Styling
+========================= */
+
+.form-card {
+  background: white;
+  border-radius: 32px;
+  border: 1px solid #dbeafe;
+  box-shadow:
+    0 20px 60px rgba(37, 99, 235, 0.12);
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 14px 16px;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.form-input:focus {
+  border-color: #2563eb;
+  background: white;
+}
+
+/* =========================
+   Button Styling
+========================= */
+
+.primary-btn {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color: white;
+  font-weight: 700;
+
+  border-radius: 999px;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 12px 25px rgba(37, 99, 235, 0.2);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 20px 35px rgba(37, 99, 235, 0.3);
+}
+
+/* =========================
+   Success Message
+========================= */
+
+.success-card {
+  background: #ecfdf5;
+  border: 1px solid #86efac;
+  color: #166534;
+  border-radius: 20px;
+  padding: 16px;
+}
+
+/* =========================
+   Focus Accessibility
+========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+/* =========================
+   Reduced Motion
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .circuit-node,
+  .animate-float {
+    animation: none !important;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+}
