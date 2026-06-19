@@ -9,11 +9,6 @@ const { body, validationResult } = require("express-validator");
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 const Enquiry = require("./models/Enquiry");
-
-// ─── PASTE YOUR ATLAS STRING HERE ─────────────────────────────────────────────
-// Replace this string with your actual connection key from MongoDB Atlas dashboard.
-// ──────────────────────────────────────────────────────────────────────────────
-
 const app = express();
 const PORT = 5000;
 
