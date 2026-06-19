@@ -12,7 +12,6 @@ const Enquiry = require("./models/Enquiry");
 
 // ─── PASTE YOUR ATLAS STRING HERE ─────────────────────────────────────────────
 // Replace this string with your actual connection key from MongoDB Atlas dashboard.
-const MONGODB_URI = "mongodb+srv://aunjsingh351_db_user:anuj1234@cluster0.oh4wspb.mongodb.net/landingpage?appName=Cluster0";
 // ──────────────────────────────────────────────────────────────────────────────
 
 const app = express();
